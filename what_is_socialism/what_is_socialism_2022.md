@@ -1,8 +1,12 @@
 _Every year or so, I hope to define (and re-define) "socialism". This exercise primarily benefits me: To put my thoughts into words and see how they change over time. The 2022 definition follows._
 
-DSA cofounder and literary critic Irving Howe once wrote that "socialism is the name of our desire". Socialism is a vision of the future that "provides moral sustenance" and "gives urgency to" our "criticism of the human condition".[^howe1954] Howe later wrote that there is "utopia" -- imposed by an elite through terror -- and there is utopia:
+[DSA](https://en.wikipedia.org/wiki/Democratic_Socialists_of_America) cofounder and literary critic [Irving Howe](https://en.wikipedia.org/wiki/Irving_Howe) once wrote that "socialism is the name of our desire". Socialism is a vision of the future that "provides moral sustenance" and "gives urgency to" our "criticism of the human condition".[^howe1954]
 
-"But whether a real option or a mere fantasy, this utopia is as needed by mankind as bread and shelter."[^howe1982]
+Howe later wrote that "there is utopia and utopia". The former is a reality imposed by an elite through terror. The latter is an idea which "exists at no point in time and space", but still "speaks for our sense of what may yet be". The former yields cynicism. The latter? "Whether a real option or a mere fantasy, this utopia is as needed by mankind as bread and shelter."[^howe1982] In short, utopia sustains our demand .
+
+Utopia is a useful term. Some socialists shrink from it, because it's unscientific, because it's a dream. [Swedish SAP](https://en.wikipedia.org/wiki/Swedish_Social_Democratic_Party) finance minister [Ernst Wigforss](https://en.wikipedia.org/wiki/Ernst_Wigforss) disagreed. TODOTODOTODO
+
+<!--more-->
 
 Socialism is not one idea: There is no singular "socialism". Socialism is a collection of ideas: There are many "socialisms". There is no "true" or "false" socialism, no "authentic" or "revisionist" socialism.
 

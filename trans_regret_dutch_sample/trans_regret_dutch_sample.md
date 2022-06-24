@@ -119,6 +119,8 @@ Wald test            = 1.3  on 1 df,   p=0.3
 Score (logrank) test = 1.32  on 1 df,   p=0.3
 ```
 
+The code for all of the above can be found on GitHub: <https://github.com/socdoneleft/socdoneleft.org>
+
 ### Conclusions
 
 Conservative fears of less-dysphoric or brainwashed patients attending gender identity clinics would suggest an upward trend in regret rates. The CEGD saw a dramatic increase of patients, which makes this a good dataset to test that fear. However, there was no upward trend in regret rates, significant or otherwise. In fact, there was a *downward* trend, though it was not significant.

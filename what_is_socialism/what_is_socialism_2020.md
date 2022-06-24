@@ -4,8 +4,11 @@ _Every year or so, I hope to define (and re-define) "socialism". This exercise p
 
 Socialism is economic democracy. I explain what that means and in the first "Socialism Done Short" video.
 
-### Section 0: Introduction
-Today for Socialism Done Short I hope to explain socialism itself. The problem is that any socialist worth their salt knows that socialists sharply disagree on what socialism means and how we should get there. That's why I say that socialism is not one singular idea but a school of ideas. Put another way, there is no one socialism, singular, but there are many socialisms, plural. However, I believe that every socialist ideology shares four basic principles:
+Today for Socialism Done Short I hope to explain socialism itself. The problem is that any socialist worth their salt knows that socialists sharply disagree on what socialism means and how we should get there. That's why I say that socialism is not one singular idea but a school of ideas. Put another way, there is no one socialism, singular, but there are many socialisms, plural.
+
+<!--more-->
+
+However, I believe that every socialist ideology shares four basic principles:
 
 Quadruplet A:
 1. Class abolition

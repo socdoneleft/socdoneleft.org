@@ -8,6 +8,8 @@ Socialism has many sub-ideologies, but every socialist ideology supports three t
 2. Democratically-planned production
 3. Low-inequality society
 
+<!--more-->
+
 ### 1: Worker ownership
 
 Worker ownership means two things:

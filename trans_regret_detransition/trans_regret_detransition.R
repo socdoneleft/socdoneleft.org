@@ -32,11 +32,16 @@ trans[, gas_n := round(men_n * men_gah * men_gas + women_n * women_gah * women_g
 # gas patient regret data
 year_bins = c(0, 1972, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 3e4)
 regret = data.table(year_gas = c(1979, 1984, 1988, 1990, 1990, 1993, 1995, 1994, 1997, 1999, 2007, 1990, 1993, 1997),
-                    years_since_gas = c(130, 27, 197, 167, 44, 49, 225, 61, 73, 27, 92, 50, 74, 212)/12)
+                    years_since_gas = c(130, 27, 197, 167, 44, 49, 225, 61, 73, 27, 92, 50, 74, 212)/12,
+                    reason = c("social acceptance", "true regret", "non-binary")[c(1,1,1,2,1,1,2,3,2,2,2,2,3,2)])
 regret[, year_cohort := year_gas - 4] # average of ~4 years between first visit, hormone therapy, and then gas
 regret[, year_cut := cut(year_cohort, year_bins, right = FALSE)]
 regret[, year_cut_num := as.numeric(year_cut) - 1]
 regret[, year_gas_bin := trans[["year_cohort"]][year_cut_num]]
+
+# specific subsets
+regret = regret[reason %in% c("true regret", "non-binary"), ]
+# regret = regret[reason %in% c("social acceptance"), ]
 
 # combine data
 regret_smy = regret[, .(regret_n = .N), by = c("year_gas_bin")]
@@ -44,7 +49,7 @@ trans = merge(trans, regret_smy, by.x = c("year_cohort"), by.y = c("year_gas_bin
 trans[is.na(regret_n), regret_n := 0]
 
 # create pseudo-individual data from aggregated data, assuming uniform distribution of years to regret
-regret_surv = regret[, c("years_since_gas", "year_gas_bin")]
+regret_surv = regret[, c("years_since_gas", "year_gas_bin", "reason")]
 setnames(regret_surv, "year_gas_bin", "year_cohort")
 regret_surv[, regr := 1]
 dup_row = function(row) {
@@ -59,7 +64,8 @@ dup_row = function(row) {
   # 4 is lower end of how fast btwn first appt and GAS
   return(data.table(year_cohort = year_cohort,
                     years_since_gas = seq(from = 2015 - (year_cohort + 3), to = (2015 - (min(2015, year_cohort + 4 + 5))), length.out = l),
-                    regr = rep(0, l)))
+                    regr = rep(0, l),
+                    reason = rep("none", l)))
 }
 dup_rows = rbindlist(lapply(1:nrow(trans), function(i){row=trans[i, ];dup_row(row)}))
 regret_surv = rbindlist(list(dup_rows, regret_surv), use.names = TRUE)
@@ -74,7 +80,6 @@ regret_surv[, years_since_gas_min := min(20, years_since_gas), by = 1:nrow(regre
 
 # generate cox proportional hazard fit
 cox_fit = coxph(formula = Surv(time=years_since_gas, event=regr) ~ year_cohort, data = regret_surv)
-# null model is nearly identical: cox_fit = coxph(formula = Surv(time=years_since_gas, event=regr) ~ 1, data = regret_surv)
 summary(cox_fit)
 ggsurvplot(survfit(cox_fit, data = regret_surv), ylim = c(0.95, 1), censor = FALSE, ggtheme = theme_ft_rc())
 
@@ -177,5 +182,6 @@ ggplot(mdt, aes(x = year_cohort, y = value, color = variable)) +
   labs(x = "year patient first visited clinic",
        y = "% who regret gender-affirming surgery",
        title = "Gender-affirming surgery regret rate among Dutch patients, by cohort",
+       subtitle = "Subsample: Regret because patient feels non-binary or regrets surgery proper",
        caption = "@socdoneleft")
 ggsave("rate2.png", width=10, height=7.5)
